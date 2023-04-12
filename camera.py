@@ -28,14 +28,7 @@ elif option is 'Upload':
         picture = Image.open(file)
         st.image(picture, use_column_width=True)
 
-url = 'https://github.com/adikamunyao/dataClan/blob/main/penPal.h5'
-
-response = requests.get(url)
-# model = pickle.loads(response.content)
-
-#url.request.urlretrieve(url, 'model.h5')
-
-model = keras.models.load_model(url)
+model = keras.models.load_model('penPal.h5')
 
 predictions = model.predict(picture)
 
