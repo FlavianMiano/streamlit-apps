@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 
 
-st.title("Streamlit Camera Input")
+st.title("Text to Digital Input")
 # run = st.checkbox('Run')
 # FRAME_WINDOW = st.image([])
 # camera = cv2.VideoCapture(0)
