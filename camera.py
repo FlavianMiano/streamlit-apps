@@ -30,9 +30,12 @@ elif option is 'Upload':
 
 url = 'https://github.com/adikamunyao/dataClan/blob/main/penPal.h5'
 
-url.request.urlretrieve(url, 'model.h5')
+response = requests.get(model_url)
+# model = pickle.loads(response.content)
 
-model = keras.models.load_model('model.h5')
+#url.request.urlretrieve(url, 'model.h5')
+
+model = keras.models.load_model(url)
 
 predictions = model.predict(picture)
 
