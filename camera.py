@@ -1,6 +1,9 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
+import requests
+import tensorflow.keras as keras
+import urllib.request
 
 
 st.title("Text to Digital Input")
@@ -17,10 +20,20 @@ if option is 'Camera':
         st.image(picture)
 
 elif option is 'Upload':
-    file = st.file_uploader(" ", type=["jpeg", "png"])
+    picture = st.file_uploader(" ", type=["jpeg", "png"])
 
-    if file is None:
+    if picture is None:
         st.text("Please upload an image file")
     else:
-        image = Image.open(file)
-        st.image(image, use_column_width=True)
+        picture = Image.open(file)
+        st.image(picture, use_column_width=True)
+
+url = 'https://github.com/adikamunyao/dataClan/blob/main/penPal.h5'
+
+url.request.urlretrieve(url, 'model.h5')
+
+model = keras.models.load_model('model.h5')
+
+predictions = model.predict(picture)
+
+st.write(predictions)
