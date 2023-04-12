@@ -30,7 +30,7 @@ elif option is 'Upload':
 
 url = 'https://github.com/adikamunyao/dataClan/blob/main/penPal.h5'
 
-response = requests.get(model_url)
+response = requests.get(url)
 # model = pickle.loads(response.content)
 
 #url.request.urlretrieve(url, 'model.h5')
