@@ -17,6 +17,10 @@ if option is 'Camera':
         st.image(picture)
 
 elif option is 'Upload':
-    file = st.file_uploader("Please upload an brain scan file", type=["jpeg", "png"])
+    file = st.file_uploader(" ", type=["jpeg", "png"])
 
-    st.image(file)
+    if file is None:
+        st.text("Please upload an image file")
+    else:
+        image = Image.open(file)
+        st.image(image, use_column_width=True)
