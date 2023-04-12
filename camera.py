@@ -13,3 +13,8 @@ st.title("Streamlit Camera Input")
 #     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 #     FRAME_WINDOW.image(frame)
 #     camera.release()
+
+picture = st.camera_input("Take a picture")
+
+if picture:
+    st.image(picture)
