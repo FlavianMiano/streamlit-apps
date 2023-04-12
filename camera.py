@@ -7,9 +7,16 @@ st.title("Text to Digital Input")
 
 options = ['Camera', 'Upload']
 
-st.selectbox('Select option', options)
+option = st.selectbox('Select option', options)
 
-picture = st.camera_input("Take a picture")
+if option is 'Camera':
 
-if picture:
-    st.image(picture)
+    picture = st.camera_input("Take a picture")
+
+    if picture:
+        st.image(picture)
+
+elif option is 'Upload':
+    file = st.file_uploader("Please upload an brain scan file", type=["jpeg", "png"])
+
+    st.image(file)
