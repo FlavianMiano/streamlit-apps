@@ -5,9 +5,9 @@ import cv2
 
 
 st.title("Streamlit Camera Input")
-run = st.checkbox('Run')
-FRAME_WINDOW = st.image([])
-camera = cv2.VideoCapture(0)
+# run = st.checkbox('Run')
+# FRAME_WINDOW = st.image([])
+# camera = cv2.VideoCapture(0)
 
 # while run:
 #     _, frame = camera.read()
