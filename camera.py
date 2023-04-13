@@ -31,7 +31,9 @@ elif option is 'Upload':
         #st.image(picture, use_column_width=True)
 
 size = (150,150)    
-image = ImageOps.fit(picture, size, Image.ANTIALIAS)
+image = ImageOps.fit(picture, (28, 28), method = 0,
+                   bleed = 0.0, centering =(0.5, 0.5))
+
 image = np.asarray(picture)
 #picture = img_to_array(picture)
 
