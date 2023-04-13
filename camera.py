@@ -31,9 +31,10 @@ elif option is 'Upload':
         #st.image(picture, use_column_width=True)
 
 
-picture = img_to_array(picture)
+image = np.asarray(picture)
+#picture = img_to_array(picture)
 
-st.write(picture)
+st.write(image)
 
 # img=cv2.resize(picture.astype(np.uint8),(28,28))
 
