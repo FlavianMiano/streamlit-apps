@@ -35,7 +35,7 @@ elif option is 'Upload':
 #picture = np.asarray(picture)
 
 
-model = keras.models.load_model('penPal.h5')
+model = keras.models.load_model('emnistModel.h5')
 
 # predictions = model.predict(picture)
 # st.write(predictions)
