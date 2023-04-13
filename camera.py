@@ -39,12 +39,26 @@ elif option is 'Upload':
         picture = Image.open(picture)
 
         if picture is not None:
-            image = np.array(picture)
-            image = (image / 255)
-            new_image = image.reshape((-1, 28, 28, 1))
-            st.write(image.shape)
+            # image = np.array(picture)
+            # image = (image / 255)
+            # new_image = image.reshape((-1, 28, 28, 1))
+            # st.write(image.shape)
 
-            predictions = model(image)
+            arr = np.zeros((28, 28, 1), dtype=np.uint8)
+
+            # Create image from array
+            img = Image.fromarray(arr)
+
+            # Save image
+            # img.save('image.jpg')
+
+            img = np.array(img)
+
+            image = img / 255
+
+            new_image = image.reshape((-1, 28, 28, 1))
+
+            predictions = model(new_image)
 
             st.write(predictions)
 
