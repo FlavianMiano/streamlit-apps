@@ -38,34 +38,15 @@ elif option is 'Upload':
         if picture is not None:
             image = np.asarray(picture)
             st.write(image)
-        #st.image(picture, use_column_width=True)
 
-# size = (150,150)    
-# image = ImageOps.fit(picture, size=(28, 28), method = 0,
-#                    bleed = 0.0, centering =(0.5, 0.5))
+image = image / 255
 
-
-#picture = img_to_array(picture)
-
-
-
-# img=cv2.resize(picture.astype(np.uint8),(28,28))
-
-# img = np.array(picture)
-
-# img = img / 255.0
-
-# image = img.resize((28,28))
-
-# img_rescalling= (cv2.resize(img, dsize=(200,200),interpolation=cv2.INTER_NEAREST))
-
-# img = img.reshape(-1, 28, 28, 1)
-
+image = image.reshape((-1, 28, 28, 1))      
 
 
 model = keras.models.load_model('emnistModel.h5')
 
-#predictions = model(image)
+predictions = model(image)
 
 # predictions = model.predict(picture)
 # st.write(predictions)
