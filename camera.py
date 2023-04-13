@@ -41,6 +41,8 @@ elif option is 'Upload':
 
 image = image / 255
 
+img_final = np.reshape(image, (None, 28, 28, 1))
+
 
 model = keras.models.load_model('emnistModel.h5')
 
