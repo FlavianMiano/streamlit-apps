@@ -19,8 +19,7 @@ if option is 'Camera':
 
     picture = st.camera_input("Take a picture")
 
-    if picture:
-        #st.image(picture)
+    #(picture)
 
 elif option is 'Upload':
     picture = st.file_uploader(" ", type=["jpeg", "png"])
