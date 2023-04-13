@@ -14,26 +14,26 @@ options = ['Camera', 'Upload']
 option = st.selectbox('Select option', options)
 
 
-def import_and_predict(picture, model):
+# def import_and_predict(picture, model):
         
-        #img = cv2.imread(picture, cv2.IMREAD_GRAYSCALE)  # Convert image to grayscale
-        img = Image.open(picture).convert('L')
-        #img = picture.convert('L')
-        height = 28
-        width = 28
-        img = cv2.resize(img, (width, height))  # Resize the image to 28x28
+#         #img = cv2.imread(picture, cv2.IMREAD_GRAYSCALE)  # Convert image to grayscale
+#         img = Image.open(picture).convert('L')
+#         #img = picture.convert('L')
+#         height = 28
+#         width = 28
+#         img = cv2.resize(img, (width, height))  # Resize the image to 28x28
             
-        #size = (150,150)    
-        #image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
-        image = np.asarray(img)
-        img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        #img_resize = (cv2.resize(img, dsize=(75, 75),    interpolation=cv2.INTER_CUBIC))/255.
+#         #size = (150,150)    
+#         #image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
+#         image = np.asarray(img)
+#         img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+#         #img_resize = (cv2.resize(img, dsize=(75, 75),    interpolation=cv2.INTER_CUBIC))/255.
         
-        img_reshape = img[np.newaxis,...]
+#         img_reshape = img[np.newaxis,...]
     
-        prediction = model.predict(img_reshape)
+#         prediction = model.predict(img_reshape)
         
-        return prediction
+#         return prediction
 
 if option is 'Camera':
 
@@ -51,12 +51,15 @@ elif option is 'Upload':
         picture = Image.open(picture)
         st.image(picture, use_column_width=True)
 
+size = (28,28)
+picture =  ImageOps.fit(picture, size, Image.ANTIALIAS)
+picture = np.asarray(picture)
+
 
 model = keras.models.load_model('penPal.h5')
 
-#predictions = model.predict(picture)
-
-#st.write(predictions)
-
-predictions = import_and_predict(picture, model)
+predictions = model.predict(picture)
 st.write(predictions)
+
+# predictions = import_and_predict(picture, model)
+# st.write(predictions)
