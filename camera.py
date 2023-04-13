@@ -1,9 +1,10 @@
 import streamlit as st
-from PIL import Image
+from PIL import Image, ImageOps
 import numpy as np
 import requests
 import tensorflow.keras as keras
 import urllib.request
+import cv2
 
 
 st.title("Text to Digital Input")
@@ -11,6 +12,21 @@ st.title("Text to Digital Input")
 options = ['Camera', 'Upload']
 
 option = st.selectbox('Select option', options)
+
+
+def import_and_predict(image_data, model):
+    
+        size = (150,150)    
+        image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
+        image = np.asarray(image)
+        img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        #img_resize = (cv2.resize(img, dsize=(75, 75),    interpolation=cv2.INTER_CUBIC))/255.
+        
+        img_reshape = img[np.newaxis,...]
+    
+        prediction = model.predict(img_reshape)
+        
+        return prediction
 
 if option is 'Camera':
 
@@ -27,6 +43,7 @@ elif option is 'Upload':
     else:
         picture = Image.open(file)
         st.image(picture, use_column_width=True)
+
 
 model = keras.models.load_model('penPal.h5')
 
