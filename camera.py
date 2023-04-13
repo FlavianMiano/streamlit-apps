@@ -14,12 +14,12 @@ options = ['Camera', 'Upload']
 option = st.selectbox('Select option', options)
 
 
-def import_and_predict(image_data, model):
+def import_and_predict(picture, model):
         
-        img = cv2.imread(image_data, cv2.IMREAD_GRAYSCALE)  # Convert image to grayscale
+        img = cv2.imread(picture, cv2.IMREAD_GRAYSCALE)  # Convert image to grayscale
         height = 28
         width = 28
-        img = cv2.resize(image_data, (width, height))  # Resize the image to 28x28
+        img = cv2.resize(picture, (width, height))  # Resize the image to 28x28
             
         #size = (150,150)    
         #image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
