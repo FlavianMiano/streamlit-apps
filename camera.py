@@ -32,12 +32,20 @@ elif option is 'Upload':
         st.image(picture, use_column_width=True)
 
 
-picture = img_to_array(picture)
+#picture = img_to_array(picture)
+
+img=cv2.resize(picture.image_data.astype(np.uint8),(28,28))
+
 img = np.array(picture)
+
 img = img / 255.0
+
 image = img.resize((28,28))
 
+img_rescalling= (cv2.resize(img, dsize=(200,200),interpolation=cv2.INTER_NEAREST))
+
 img = img.reshape(-1, 28, 28, 1)
+
 
 
 model = keras.models.load_model('emnistModel.h5')
