@@ -51,8 +51,8 @@ elif option is 'Upload':
         picture = Image.open(picture)
         st.image(picture, use_column_width=True)
 
-size = (28,28)
-picture =  ImageOps.fit(picture, size, Image.ANTIALIAS)
+#size = (28,28)
+#picture =  ImageOps.fit(picture, size, Image.ANTIALIAS)
 picture = np.asarray(picture)
 
 
