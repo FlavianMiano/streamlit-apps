@@ -23,7 +23,7 @@ if option is 'Camera':
         st.image(picture)
 
 elif option is 'Upload':
-    picture = st.file_uploader(" ", type=["jpeg", "png"]).getvalue()
+    picture = st.file_uploader(" ", type=["jpeg", "png"])
 
     if picture is None:
         st.text("Please upload an image file")
