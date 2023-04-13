@@ -40,12 +40,12 @@ elif option is 'Upload':
             image = image / 255
             st.write(image.shape)
 
-img_final = np.reshape(image, (-1, 28, 28, 1))
+#img_final = np.reshape(image, (-1, 28, 28, 1))
 
 
 model = keras.models.load_model('emnistModel.h5')
 
-predictions = model(image)
+#predictions = model(image)
 
 # predictions = model.predict(picture)
 # st.write(predictions)
