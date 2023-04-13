@@ -18,8 +18,10 @@ option = st.selectbox('Select option', options)
 if option is 'Camera':
 
     picture = st.camera_input("Take a picture")
-    image = np.asarray(picture)
-    st.write(image)
+    
+    if picture is not None:
+        image = np.asarray(picture)
+        st.write(image)
 
     #(picture)
 
@@ -30,8 +32,10 @@ elif option is 'Upload':
         st.text("Please upload an image file")
     else:
         picture = Image.open(picture)
-        image = np.asarray(picture)
-        st.write(image)
+        
+        if picture is not None:
+            image = np.asarray(picture)
+            st.write(image)
         #st.image(picture, use_column_width=True)
 
 # size = (150,150)    
