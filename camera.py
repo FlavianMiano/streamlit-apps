@@ -18,6 +18,8 @@ option = st.selectbox('Select option', options)
 if option is 'Camera':
 
     picture = st.camera_input("Take a picture")
+    image = np.asarray(picture)
+    st.write(image)
 
     #(picture)
 
@@ -28,16 +30,18 @@ elif option is 'Upload':
         st.text("Please upload an image file")
     else:
         picture = Image.open(picture)
+        image = np.asarray(picture)
+        st.write(image)
         #st.image(picture, use_column_width=True)
 
 # size = (150,150)    
 # image = ImageOps.fit(picture, size=(28, 28), method = 0,
 #                    bleed = 0.0, centering =(0.5, 0.5))
 
-image = np.asarray(picture)
+
 #picture = img_to_array(picture)
 
-st.write(image)
+
 
 # img=cv2.resize(picture.astype(np.uint8),(28,28))
 
@@ -55,7 +59,7 @@ st.write(image)
 
 model = keras.models.load_model('emnistModel.h5')
 
-predictions = model(image)
+#predictions = model(image)
 
 # predictions = model.predict(picture)
 # st.write(predictions)
