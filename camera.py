@@ -53,7 +53,7 @@ elif option is 'Upload':
 
 #size = (28,28)
 #picture =  ImageOps.fit(picture, size, Image.ANTIALIAS)
-picture = np.asarray(picture)
+#picture = np.asarray(picture)
 
 
 model = keras.models.load_model('penPal.h5')
