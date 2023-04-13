@@ -17,7 +17,8 @@ option = st.selectbox('Select option', options)
 def import_and_predict(picture, model):
         
         #img = cv2.imread(picture, cv2.IMREAD_GRAYSCALE)  # Convert image to grayscale
-        img = picture.convert('L')
+        img = Image.open(picture).convert('L')
+        #img = picture.convert('L')
         height = 28
         width = 28
         img = cv2.resize(img, (width, height))  # Resize the image to 28x28
