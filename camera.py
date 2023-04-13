@@ -20,7 +20,7 @@ if option is 'Camera':
     picture = st.camera_input("Take a picture")
 
     if picture:
-        st.image(picture)
+        #st.image(picture)
 
 elif option is 'Upload':
     picture = st.file_uploader(" ", type=["jpeg", "png"])
@@ -29,22 +29,24 @@ elif option is 'Upload':
         st.text("Please upload an image file")
     else:
         picture = Image.open(picture)
-        st.image(picture, use_column_width=True)
+        #st.image(picture, use_column_width=True)
 
 
-#picture = img_to_array(picture)
+picture = img_to_array(picture)
 
-img=cv2.resize(picture.astype(np.uint8),(28,28))
+st.write(picture)
 
-img = np.array(picture)
+# img=cv2.resize(picture.astype(np.uint8),(28,28))
 
-img = img / 255.0
+# img = np.array(picture)
 
-image = img.resize((28,28))
+# img = img / 255.0
 
-img_rescalling= (cv2.resize(img, dsize=(200,200),interpolation=cv2.INTER_NEAREST))
+# image = img.resize((28,28))
 
-img = img.reshape(-1, 28, 28, 1)
+# img_rescalling= (cv2.resize(img, dsize=(200,200),interpolation=cv2.INTER_NEAREST))
+
+# img = img.reshape(-1, 28, 28, 1)
 
 
 
