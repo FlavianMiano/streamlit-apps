@@ -6,6 +6,7 @@ import tensorflow.keras as keras
 import urllib.request
 import cv2
 from tensorflow.keras.preprocessing.image import img_to_array
+import asciify
 
 
 model = keras.models.load_model('emnistModel.h5')
@@ -57,7 +58,11 @@ elif option is 'Upload':
 
             predictions = model(arr)
 
-            st.write(predictions)
+            ascii_art = asciify.image_to_ascii(predictions)
+
+            st.write(ascii_art)
+
+
 
 #img_final = np.reshape(image, (-1, 28, 28, 1))
 
