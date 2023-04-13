@@ -19,7 +19,7 @@ options = ['Camera', 'Upload']
 option = st.selectbox('Select option', options)
 
 
-if option is 'Camera':
+if option == 'Camera':
 
     picture = st.camera_input("Take a picture")
 
@@ -31,7 +31,7 @@ if option is 'Camera':
 
     #(picture)
 
-elif option is 'Upload':
+elif option == 'Upload':
     picture = st.file_uploader(" ", type=["jpeg", "png"])
 
     if picture is None:
