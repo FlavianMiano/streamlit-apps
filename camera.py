@@ -41,12 +41,15 @@ elif option is 'Upload':
     if picture is None:
         st.text("Please upload an image file")
     else:
-        picture = Image.open(file)
+        picture = Image.open(picture)
         st.image(picture, use_column_width=True)
 
 
 model = keras.models.load_model('penPal.h5')
 
-predictions = model.predict(picture)
+#predictions = model.predict(picture)
 
+#st.write(predictions)
+
+predictions = import_and_predict(picture, model)
 st.write(predictions)
