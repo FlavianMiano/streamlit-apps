@@ -34,7 +34,7 @@ elif option is 'Upload':
 
 #picture = img_to_array(picture)
 
-img=cv2.resize(picture.image_data.astype(np.uint8),(28,28))
+img=cv2.resize(picture.astype(np.uint8),(28,28))
 
 img = np.array(picture)
 
