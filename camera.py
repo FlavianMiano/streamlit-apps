@@ -58,7 +58,7 @@ elif option == 'Upload':
 
             predictions = model(arr)
 
-            ascii_art = asciify.image_to_ascii(predictions)
+            ascii_art = asciify.asciify_image(predictions)
 
             st.write(ascii_art)
 
