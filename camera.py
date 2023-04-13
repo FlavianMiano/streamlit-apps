@@ -15,10 +15,13 @@ option = st.selectbox('Select option', options)
 
 
 def import_and_predict(image_data, model):
-    
-        size = (150,150)    
-        image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
-        image = np.asarray(image)
+        
+        img = cv2.imread(image_data, cv2.IMREAD_GRAYSCALE)  # Convert image to grayscale
+        img = cv2.resize(image_data, (28, 28))  # Resize the image to 28x28
+            
+        #size = (150,150)    
+        #image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
+        image = np.asarray(img)
         img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         #img_resize = (cv2.resize(img, dsize=(75, 75),    interpolation=cv2.INTER_CUBIC))/255.
         
