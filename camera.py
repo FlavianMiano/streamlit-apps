@@ -41,7 +41,7 @@ elif option is 'Upload':
         if picture is not None:
             image = np.array(picture)
             image = (image / 255)
-            #new_image = image.reshape((28, 28, -1))
+            new_image = image.reshape((-1, 28, 28, -1))
             st.write(image.shape)
 
             predictions = model(image)
