@@ -44,7 +44,7 @@ elif option is 'Upload':
             # new_image = image.reshape((-1, 28, 28, 1))
             # st.write(image.shape)
 
-            arr = np.zeros((-1, 28, 28, 1), dtype=np.uint8)
+            arr = np.zeros((1, 28, 28, 1), dtype=np.uint8)
 
             # Create image from array
             # img = Image.fromarray(arr)
