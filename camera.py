@@ -8,6 +8,9 @@ import cv2
 from tensorflow.keras.preprocessing.image import img_to_array
 
 
+model = keras.models.load_model('emnistModel.h5')
+
+
 st.title("Text to Digital Input")
 
 options = ['Camera', 'Upload']
@@ -41,12 +44,11 @@ elif option is 'Upload':
             #new_image = image.reshape((28, 28, -1))
             st.write(image.shape)
 
+            predictions = model(image)
+
+            st.write(predictions)
+
 #img_final = np.reshape(image, (-1, 28, 28, 1))
-
-
-model = keras.models.load_model('emnistModel.h5')
-
-#predictions = model(image)
 
 # predictions = model.predict(picture)
 # st.write(predictions)
