@@ -37,9 +37,8 @@ elif option is 'Upload':
 
         if picture is not None:
             image = np.asarray(picture)
+            image = image / 255
             st.write(image)
-
-image = image / 255
 
 img_final = np.reshape(image, (-1, 28, 28, 1))
 
