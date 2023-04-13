@@ -47,18 +47,15 @@ elif option is 'Upload':
             arr = np.zeros((28, 28, 1), dtype=np.uint8)
 
             # Create image from array
-            img = Image.fromarray(arr)
+            # img = Image.fromarray(arr)
 
             # Save image
             # img.save('image.jpg')
 
-            img = np.array(img)
 
             #image = img / 255
 
-            new_image = img.reshape((28, 28, 1))
-
-            predictions = model(new_image)
+            predictions = model(arr)
 
             st.write(predictions)
 
