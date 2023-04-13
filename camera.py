@@ -30,7 +30,8 @@ elif option is 'Upload':
         picture = Image.open(picture)
         #st.image(picture, use_column_width=True)
 
-
+size = (28,28)    
+image = ImageOps.fit(picture, size, Image.ANTIALIAS)
 image = np.asarray(picture)
 #picture = img_to_array(picture)
 
