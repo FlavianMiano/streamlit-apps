@@ -52,7 +52,7 @@ st.write(image)
 
 model = keras.models.load_model('emnistModel.h5')
 
-predictions = model(img)
+predictions = model(image)
 
 # predictions = model.predict(picture)
 # st.write(predictions)
