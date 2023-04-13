@@ -54,9 +54,9 @@ elif option is 'Upload':
 
             img = np.array(img)
 
-            image = img / 255
+            #image = img / 255
 
-            new_image = image.reshape((-1, 28, 28, 1))
+            new_image = img.reshape((28, 28, 1))
 
             predictions = model(new_image)
 
